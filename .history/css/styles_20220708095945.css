@@ -1,0 +1,15 @@
+* {
+    background-color: black;
+    color: white;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+}
+
+
+
+footer {
+    display: flex;
+    flex-direction: row;
+    
+}

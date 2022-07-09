@@ -1,0 +1,18 @@
+body {
+    background-color: black;
+    color: white;
+    width: 0;
+    height: 0;
+    box-sizing: border-box;
+}
+
+#logo {
+    width: 125px;
+    height: 60px;
+}
+
+header {
+    position: fixed;
+    display: grid;
+    grid-gap: 5px;
+}
