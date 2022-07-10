@@ -304,7 +304,8 @@ let movies = new Vue({
         actors: 'John Travolta, Uma Thurman, Samuel L. Jackson',
         director: 'Quentin Tarantino',
         hover: false,
-    }],
+    }
+],
 
     fantasyList: [{
         name: 'Jurassic World Dominion',

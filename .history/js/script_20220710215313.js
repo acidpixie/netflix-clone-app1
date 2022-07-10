@@ -295,15 +295,6 @@ let movies = new Vue({
         actors: 'Samuel Barnett, Elijah Wood, Hannah Marks',
         director: 'Max Landis',
         hover: false,
-    },
-    {
-        name: 'Pulp Fiction',
-        description: 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',
-        image: 'images/pulp-fiction.jpg',
-        comingSoon: 0,
-        actors: 'John Travolta, Uma Thurman, Samuel L. Jackson',
-        director: 'Quentin Tarantino',
-        hover: false,
     }],
 
     fantasyList: [{
