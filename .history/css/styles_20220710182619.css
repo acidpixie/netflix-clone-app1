@@ -1,0 +1,159 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    margin-left: 2em;
+    margin-right: 2em;
+    background-color: black;
+    color: white;
+    width: 0;
+    height: 0;
+
+}
+
+#logo {
+    margin-top: 0%;
+    width: 130px;
+    height: 65px;
+}
+
+header {
+    font-family: 'Poppins', sans-serif;
+    position: fixed;
+    display: grid;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 4fr 1fr;
+    width: 100%;
+    margin-bottom: 0px;
+}
+
+nav {
+    padding: 20px 20px 0 0;
+}
+
+a {
+    padding-left: 15px;
+    color: white;
+    text-decoration: none;
+}
+
+/* Header video styling */
+
+#display-content {
+    position: absolute;
+    bottom: 1vh;
+    left: 22vh;
+    width: 50em;    
+}
+
+#display-title {
+    font-size: 500%;
+    font-family: poppins;
+    margin-bottom: 0;
+}
+
+#display-description {
+    font-family: poppins light;
+    font-size: 100%;
+    margin-top: 0;
+}
+
+#display-button {
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+/* thumbnail styling */
+
+.list-items {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.labels {
+    font-family: poppins light;
+    font-size: 25px;
+    padding-left: 40px;
+}
+
+.thumbnail {
+    height: 200px;
+    width: 350px;
+}
+
+li {
+    list-style: none;
+}
+
+.tag {
+    font-family: poppins;
+    font-size: 12px;
+    margin: 0%;
+    width: 350px;
+    height: 25px;
+    background-color: #2423237d;
+    text-align: center;
+    padding-top: 3px;
+    position: relative;
+
+}
+
+.info {
+    visibility: hidden;
+    position: relative;
+    bottom: 100px;
+    border-radius: 10px;
+    background-color: #2423237d;
+    font-family: poppins;
+    font-size: 10px;
+    width: 350px;
+    height: auto;
+    padding: 5px;
+    margin-top: 5px;
+
+}
+
+.info-add-button {
+    background: transparent;
+    border-color: white;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-left: 155px;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* meta info styling */
+
+.social-media-icons {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    position: relative;
+    margin-left: 4em;
+    margin-bottom: 1em;
+    
+}
+
+.meta-links {
+    width: 1500px;
+    row-gap: 5px;
+    height: auto;
+    display: grid;
+    grid-template-columns: 4fr 4fr 4fr;
+    text-align: center;
+}
