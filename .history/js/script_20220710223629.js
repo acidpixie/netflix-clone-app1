@@ -163,7 +163,7 @@ let movies = new Vue({
     animation: [{
         name: 'Minions Rise of Gru',
         description: 'The untold story of one twelve-year-olds dream to become the worlds greatest supervillain.',
-        image: 'images/minions.PNG',
+        image: 'images/minions.jpg',
         comingSoon: 1,
         actors: 'Steve Carell(voice), Pierre Coffin(voice), Alan Arkin(voice)',
         director: 'Kyle Balda, Brad Ableson, Jonathan del Val',

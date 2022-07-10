@@ -91,7 +91,7 @@ ul {
     padding-left: 40px;
 }
 
-img {
+.thumbnail {
     height: 200px;
     width: 350px;
     padding: 5px;
@@ -125,7 +125,6 @@ li {
     height: auto;
     padding: 5px;
     margin-top: 5px;
-    
 
 }
 

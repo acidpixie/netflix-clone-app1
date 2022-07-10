@@ -163,7 +163,7 @@ let movies = new Vue({
     animation: [{
         name: 'Minions Rise of Gru',
         description: 'The untold story of one twelve-year-olds dream to become the worlds greatest supervillain.',
-        image: 'images/minions.PNG',
+        image: 'images/minions.jpg',
         comingSoon: 1,
         actors: 'Steve Carell(voice), Pierre Coffin(voice), Alan Arkin(voice)',
         director: 'Kyle Balda, Brad Ableson, Jonathan del Val',
@@ -372,7 +372,7 @@ let movies = new Vue({
     {
         name: 'Nezha Reborn',
         description: 'A normal young deliveryman Li Yunxiang, though coming from the slum area, is living a satisfying life but when the arrogant wealthy son of Boss beats him down, his deep anger turns into a blast of Truth Fire.',
-        image: 'images/nezha-reborn.jpg',
+        image: 'images/nezha-reporn.jpg',
         comingSoon: 0,
         actors: 'Nicole Fong(voice), Victoria Grace(voice), Jason Ko(English version)',
         director: 'Ji Zhao',

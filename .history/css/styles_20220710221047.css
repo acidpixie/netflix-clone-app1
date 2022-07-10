@@ -71,14 +71,6 @@ a {
 
 .list-items {
     display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-}
-
-.content-items {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
 }
 
 ul {
@@ -91,10 +83,9 @@ ul {
     padding-left: 40px;
 }
 
-img {
+.thumbnail {
     height: 200px;
     width: 350px;
-    padding: 5px;
 }
 
 li {
@@ -125,7 +116,6 @@ li {
     height: auto;
     padding: 5px;
     margin-top: 5px;
-    
 
 }
 
