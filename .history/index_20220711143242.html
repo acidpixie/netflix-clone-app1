@@ -176,8 +176,9 @@
             <img v-bind:src="movies.image" class="thumbnail">
           </div>
           <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
-          <div class="list-item-remove">
-          <button @click="removeItem(movies.name)" id="remove-button"><i class="fa fa-minus"
+          <div class="info" v-if="movies.hover">
+          <p> {{movies.name}} </p>
+          <button @click="removeItem(movie.name)" id="remove-button"><i class="fa fa-minus"
               aria-hidden="true"></i></button>
           </div>
         </li>

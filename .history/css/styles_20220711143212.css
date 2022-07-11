@@ -140,7 +140,6 @@ li {
     border-radius: 50%;
     margin-left: 155px;
     margin-bottom: 10px;
-    cursor: pointer;
 }
 
 section {
@@ -148,15 +147,7 @@ section {
     padding-bottom: 15px;
 }
 
-#remove-button {
-    background-color: #5554548d;
-    color: white;
-    margin-top: 4px;
-    width: 30px;
-    height: 190px;
-    text-align: center;
-    cursor: pointer;
-}
+
 
 
 /* meta info styling */

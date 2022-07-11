@@ -168,7 +168,7 @@
 
     <section>
       <!--WATCH LIST-->
-    <h2 class="labels">My List</h2>
+    <h2>My List</h2>
       <ul class="list-items">
         <li class="content-items" v-for="(movies, index) in watchList" :key="index" @mouseover="movies.hover = true"
           @mouseleave="movies.hover = false">
@@ -176,10 +176,9 @@
             <img v-bind:src="movies.image" class="thumbnail">
           </div>
           <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
-          <div class="list-item-remove">
-          <button @click="removeItem(movies.name)" id="remove-button"><i class="fa fa-minus"
+          <p> {{movies.name}} </p>
+          <button @click="removeItem(movie.name)" id="remove-button"><i class="fa fa-minus"
               aria-hidden="true"></i></button>
-          </div>
         </li>
       </ul>
     </section>

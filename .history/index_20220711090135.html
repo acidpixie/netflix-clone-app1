@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Netflix Clone</title>
+
+  <!--GOOGLE FONTS-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@200;300;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="/css/styles.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+  <script type="text/javascript" src="js/script.js"></script>
+  <script src="https://use.fontawesome.com/8ad1b327a2.js"></script>
+
+
+</head>
+
+<body>
+  <header>
+    <div class="netflix-logo">
+      <a href="#home"><img src="images/netflix-logo.png" alt="Netflix logo" id="logo"></a>
+    </div>
+
+    <nav class="main-nav" id="main-nav">
+      <!--NAVIGATION BAR-->
+      <a href="#home">Home</a>
+      <a href="#">TV Shows</a>
+      <a href="#">Movies</a>
+      <a href="#">New & Popular</a>
+      <a href="watchlist.html">My List</a>
+    </nav>
+
+    <nav class="second-nav">
+      <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+      <a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a>
+      <a href="#">Profile</a>
+    </nav>
+
+  </header>
+
+  <!--VIDEO CAROUSEL WITH TEXT-->
+  <div id="display-video">
+    <video controls muted loop> <!--add in autoplay once done-->
+      <source v-bind:src="vid.video" v-bind:type="vid.fileType" id="video-header">
+    </video>
+    <div id="display-content">
+      <h1 id="display-title"> {{vid.name}} </h1>
+      <p id="display-description"> {{vid.description}} </p>
+      <button id="display-button">Add to watch-list</button>
+    </div>
+
+
+      <!--TRENDING NOW-->
+        <h2 class="labels">Trending</h2>
+        <ul class="list-items">
+          <li class="content-items" v-for="(movies, index) in trending" :key="index" @mouseover="movies.hover = true"
+          @mouseleave="movies.hover = false">
+            <div>
+              <img v-bind:src="movies.image" class="thumbnail">
+            </div>
+            <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+            <div class="info" v-if="movies.hover">
+              <!--visible on hover only-->
+              <p> {{movies.name}} </p>
+              <p> {{movies.description}} </p>
+              <p> {{movies.actors}} </p>
+              <button :disabled="watchList.length===20" @click="saveItem(movies.name, movies.description, movies.image, movies.comingSoon, movies.actors, movies.director)" class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+          </li>
+        </ul>
+
+        <!--DRAMA / ROMANCE-->
+        <h2 class="labels">Drama / Romance</h2>
+        <ul class="list-items">
+          <li class="content-items" v-for="(movies, index) in dramaList" :key="index" @mouseover="movies.hover = true"
+          @mouseleave="movies.hover = false">
+            <div>
+              <img v-bind:src="movies.image" class="thumbnail">
+            </div>
+            <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+            <div class="info" v-if="movies.hover">
+              <!--visible on hover only-->
+              <p> {{dramaList.name}} </p>
+              <p> {{dramaList.description}} </p>
+              <p> {{dramaList.actors}} </p>
+              <button :disabled="watchList.length===20" @click="saveItem(movies.name, movies.description, movies.image, movies.comingSoon, movies.actors, movies.director)" class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+          </li>
+        </ul>
+
+        <!--ANIMATION-->
+        <h2 class="labels">Animation</h2>
+        <ul class="list-items">
+          <li class="content-items" v-for="(movies, index) in animation" :key="index" @mouseover="movies.hover = true"
+          @mouseleave="movies.hover = false">
+            <div>
+              <img v-bind:src="movies.image" class="thumbnail">
+            </div>
+            <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+            <div class="info" v-if="movies.hover">
+              <!--visible on hover only-->
+              <p> {{animation.name}} </p>
+              <p> {{animation.description}} </p>
+              <p> {{animation.actors}} </p>
+              <button :disabled="watchList.length===20" @click="saveItem(movies.name, movies.description, movies.image, movies.comingSoon, movies.actors, movies.director)" class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+          </li>
+        </ul>
+
+        <!--ACTION / CRIME-->
+        <h2 class="labels">Action / Crime</h2>
+        <ul class="list-items">
+          <li class="content-items" v-for="(movies, index) in actionList" :key="index" @mouseover="movies.hover = true"
+          @mouseleave="movies.hover = false">
+            <div>
+              <img v-bind:src="movies.image" class="thumbnail">
+            </div>
+            <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+            <div class="info" v-if="movies.hover">
+              <!--visible on hover only-->
+              <p> {{actionList.name}} </p>
+              <p> {{actionList.description}} </p>
+              <p> {{actionList.actors}} </p>
+              <button :disabled="watchList.length===20" @click="saveItem(movies.name, movies.description, movies.image, movies.comingSoon, movies.actors, movies.director)" class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+          </li>
+        </ul>
+
+        <!--FANTASY / ADVENTURE-->
+        <h2 class="labels">Adventure / Fantasy</h2>
+        <ul class="list-items">
+          <li class="content-items" v-for="(movies, index) in fantasyList" :key="index" @mouseover="movies.hover = true"
+          @mouseleave="movies.hover = false">
+            <div>
+              <img v-bind:src="movies.image" class="thumbnail">
+            </div>
+            <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+            <div class="info" v-if="movies.hover">
+              <!--visible on hover only-->
+              <p> {{fantasyList.name}} </p>
+              <p> {{fantasyList.description}} </p>
+              <p> {{fantasyList.actors}} </p>
+              <button :disabled="watchList.length===20" @click="saveItem(movies.name, movies.description, movies.image, movies.comingSoon, movies.actors, movies.director)" class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+          </li>
+        </ul>
+
+
+    </div>
+
+
+    <section class="footer-links">
+      <div class="social-media-icons">
+        <a><i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a>
+        <a><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
+        <a><i class="fa fa-youtube-play fa-2x" aria-hidden="true"></i></a>
+      </div>
+
+      <div class="meta-links">
+        <a href="#">Audio and Subtitles</a>
+        <a href="#">Media Center</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact Us</a>
+
+        <a href="#">Audio Description</a>
+        <a href="#">Investor Relations</a>
+        <a href="#">Legal Notices</a>
+
+        <a href="#">Help Center</a>
+        <a href="#">Jobs</a>
+        <a href="#">Cookie Preference</a>
+
+        <a href="#" Gift Cards</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Corporate Information</a>
+      </div>
+    </section>
+
+</body>
+
+<footer>
+
+
+
+</footer>
+
+</html>

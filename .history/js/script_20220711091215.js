@@ -385,55 +385,16 @@ let movies = new Vue({
 
    methods: {
     //add item to watchlist and save to local storage.
-        saveItem: function (movieName, movieDesc, movieImg, movieComingSoon, movieActors, movieDirector) {
 
-            if (this.watchList.some(m => m.name === movieName)) {
-                alert("This title is already on your list");
-            }
-            else {
-                //create the movie object
-                let movieObj = {
-                    name: movieName,
-                    description: movieDesc,
-                    image: movieImg,
-                    comingSoon: movieComingSoon,
-                    actors: movieActors,
-                    director: movieDirector,
 
-                }
-                this.watchList.push(movieObj);
 
-                let movieArray = JSON.stringify(movieObj);
-                localStorage.setItem(movieName, movieArray);
-            };
-        },
 
-        removeItem: function (movieName) {
-
-            const index = this.watchList.map(function (e) {return e.name}).indexOf(movieName);
-            
-            if (index > -1) {
-                this.watchList.splice(index,1);
-                localStorage.removeItem(movieName);
-            }
-        },
    },
-    
-   mounted() {
-            let movieItemStorage = [];
-            for (let key in localStorage) {
-                movieItemStorage.push(key);
-            };
 
-            movieItemStorage.splice(-6,6);
-
-            for (i = 0; i < movieItemStorage.length; i++) {
-                let movieArray = localStorage.getItem(movieItemStorage[i]);
-                let data = JSON.parse(movieArray);
-                this.watchList.push(data);
-            };
-        }
-
+   //delete item from watchlist and local storage.
 })
+
+
+
 
 }

@@ -392,7 +392,7 @@ let movies = new Vue({
             }
             else {
                 //create the movie object
-                let movieObj = {
+                let movieItem = {
                     name: movieName,
                     description: movieDesc,
                     image: movieImg,
@@ -401,10 +401,10 @@ let movies = new Vue({
                     director: movieDirector,
 
                 }
-                this.watchList.push(movieObj);
+                this.watchList.push(movieItem);
 
-                let movieArray = JSON.stringify(movieObj);
-                localStorage.setItem(movieName, movieArray);
+                let MOVIE_STORAGE = JSON.stringify(movieItem);
+                localStorage.setItem(movieName, MOVIE_STORAGE);
             };
         },
 
@@ -417,9 +417,8 @@ let movies = new Vue({
                 localStorage.removeItem(movieName);
             }
         },
-   },
-    
-   mounted() {
+
+        mounted() {
             let movieItemStorage = [];
             for (let key in localStorage) {
                 movieItemStorage.push(key);
@@ -428,12 +427,20 @@ let movies = new Vue({
             movieItemStorage.splice(-6,6);
 
             for (i = 0; i < movieItemStorage.length; i++) {
-                let movieArray = localStorage.getItem(movieItemStorage[i]);
-                let data = JSON.parse(movieArray);
+                let MOVIE_STORAGE = localStorage.getItem(movieItemStorage[i]);
+                let data = JSON.parse(MOVIE_STORAGE);
                 this.watchList.push(data);
             };
         }
 
+
+
+
+   },
+
 })
+
+
+
 
 }

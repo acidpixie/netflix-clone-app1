@@ -10,6 +10,12 @@ body {
 
 }
 
+span {
+    width: 500%;
+    height: 300px;
+    background-color: red;
+}
+
 #logo {
     margin-top: 0%;
     width: 130px;
@@ -140,23 +146,9 @@ li {
     border-radius: 50%;
     margin-left: 155px;
     margin-bottom: 10px;
-    cursor: pointer;
 }
 
-section {
-    padding-top: 10px;
-    padding-bottom: 15px;
-}
 
-#remove-button {
-    background-color: #5554548d;
-    color: white;
-    margin-top: 4px;
-    width: 30px;
-    height: 190px;
-    text-align: center;
-    cursor: pointer;
-}
 
 
 /* meta info styling */

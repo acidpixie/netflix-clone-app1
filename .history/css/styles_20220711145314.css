@@ -140,7 +140,6 @@ li {
     border-radius: 50%;
     margin-left: 155px;
     margin-bottom: 10px;
-    cursor: pointer;
 }
 
 section {
@@ -155,8 +154,10 @@ section {
     width: 30px;
     height: 190px;
     text-align: center;
-    cursor: pointer;
 }
+
+
+
 
 
 /* meta info styling */
