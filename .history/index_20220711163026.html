@@ -43,7 +43,7 @@
     <nav class="second-nav">
       <div class="search-bar">
       <a class = "search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-      <input type="search" class="textbox" v-model="movieSearch" placeholder="type here..."/>
+      <input type="text" class="textbox" placeholder="type here..."/>
       </div>
       <a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a>
       <a href="#">Profile</a>
@@ -53,13 +53,14 @@
 
   <!--VIDEO CAROUSEL WITH TEXT-->
   <div id="display-video">
-    <video autoplay controls muted loop>
+    <video controls muted loop>
+      <!--add in autoplay once done-->
       <source src="/video/Jujutsu-Kaisen.mp4" id="video-header">
     </video>
     <div id="display-content">
       <h1 id="display-title"> {{vid.name}} </h1>
       <p id="display-description"> {{vid.description}} </p>
-      <button id="display-button" :disabled="watchList.length===20" @click="saveItem(vid.name, vid.description, vid.image)">Add to watch-list</button>
+      <button id="display-button">Add to watch-list</button>
     </div>
 
 

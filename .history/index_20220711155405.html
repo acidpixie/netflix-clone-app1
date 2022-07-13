@@ -37,14 +37,11 @@
       <a href="#">TV Shows</a>
       <a href="#">Movies</a>
       <a href="#">New & Popular</a>
-      <a href="#myList">My List</a>
+      <a href="watchlist.html">My List</a>
     </nav>
 
     <nav class="second-nav">
-      <div class="search-bar">
-      <a class = "search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
-      <input type="search" class="textbox" v-model="movieSearch" placeholder="type here..."/>
-      </div>
+      <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
       <a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a>
       <a href="#">Profile</a>
     </nav>
@@ -53,18 +50,19 @@
 
   <!--VIDEO CAROUSEL WITH TEXT-->
   <div id="display-video">
-    <video autoplay controls muted loop>
-      <source src="/video/Jujutsu-Kaisen.mp4" id="video-header">
+    <video controls muted loop>
+      <!--add in autoplay once done-->
+      <source v-bind:src="vid.video" v-bind:type="vid.fileType" id="video-header">
     </video>
     <div id="display-content">
       <h1 id="display-title"> {{vid.name}} </h1>
       <p id="display-description"> {{vid.description}} </p>
-      <button id="display-button" :disabled="watchList.length===20" @click="saveItem(vid.name, vid.description, vid.image)">Add to watch-list</button>
+      <button id="display-button">Add to watch-list</button>
     </div>
 
 
     <!--TRENDING NOW-->
-    <h2 class="labels">Trending Now</h2>
+    <h2 class="labels">Trending</h2>
     <ul class="list-items">
       <li class="content-items" v-for="(movies, index) in trending" :key="index" @mouseover="movies.hover = true"
         @mouseleave="movies.hover = false">
@@ -85,7 +83,7 @@
     </ul>
 
     <!--DRAMA / ROMANCE-->
-    <h2 class="labels">Drama & Romance</h2>
+    <h2 class="labels">Drama / Romance</h2>
     <ul class="list-items">
       <li class="content-items" v-for="(movies, index) in dramaList" :key="index" @mouseover="movies.hover = true"
         @mouseleave="movies.hover = false">
@@ -127,7 +125,7 @@
     </ul>
 
     <!--ACTION / CRIME-->
-    <h2 class="labels">Action & Crime</h2>
+    <h2 class="labels">Action / Crime</h2>
     <ul class="list-items">
       <li class="content-items" v-for="(movies, index) in actionList" :key="index" @mouseover="movies.hover = true"
         @mouseleave="movies.hover = false">
@@ -148,7 +146,7 @@
     </ul>
 
     <!--FANTASY / ADVENTURE-->
-    <h2 class="labels">Sci-fi & Fantasy</h2>
+    <h2 class="labels">Adventure / Fantasy</h2>
     <ul class="list-items">
       <li class="content-items" v-for="(movies, index) in fantasyList" :key="index" @mouseover="movies.hover = true"
         @mouseleave="movies.hover = false">
@@ -170,7 +168,7 @@
 
     <section>
       <!--WATCH LIST-->
-    <h2 class="labels" id="myList">My List</h2>
+    <h2 class="labels">My List</h2>
       <ul class="list-items">
         <li class="content-items" v-for="(movies, index) in watchList" :key="index" @mouseover="movies.hover = true"
           @mouseleave="movies.hover = false">

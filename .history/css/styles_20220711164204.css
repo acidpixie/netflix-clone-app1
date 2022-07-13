@@ -41,14 +41,14 @@ a {
 video {
     margin-top: 60px;
     padding: 0;
-    width: 1560px;
+    width: 1500px;
     height: 720px;
 }
 
 #display-content {
     position: absolute;
-    bottom: 8vh;
-    left: 15vh;
+    bottom: 10vh;
+    left: 20vh;
     width: 50em;  
 }
 
@@ -100,8 +100,8 @@ ul {
 }
 
 img {
-    height: 150px;
-    width: 250px;
+    height: 200px;
+    width: 350px;
     padding: 5px;
 }
 
@@ -113,8 +113,8 @@ li {
     font-family: poppins;
     padding-top: 3px;
     font-size: 12px;
-    margin-top: 150px;
-    width: 250px;
+    margin-top: 200px;
+    width: 345px;
     height: 25px;
     background-color: #2423237d;
     text-align: center;
@@ -129,7 +129,7 @@ li {
   color: white;
   font-family: poppins;
   font-size: 11px;
-  width: 250px;
+  width: 350px;
   height: auto;
   padding: 5px;
   margin-top: 5px;
@@ -144,7 +144,7 @@ li {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    margin-left: 100px;
+    margin-left: 155px;
     margin-bottom: 10px;
     cursor: pointer;
 }
@@ -155,11 +155,11 @@ section {
 }
 
 #remove-button {
-    background-color: #22222292;
+    background-color: #5554548d;
     color: white;
     margin-top: 4px;
     width: 30px;
-    height: 172px;
+    height: 190px;
     text-align: center;
     cursor: pointer;
 }
@@ -185,35 +185,24 @@ section {
     text-align: center;
 }
 
-/*search button styling*/
+/*search button*/
 
 .search-bar {
-    margin:0;
-    padding:0;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top:55%;
-    left:75%;
-    position: absolute;
-    transform: translate(-50%,-50%);
-    transition-duration: 0.2s;
+   gap: 10px;
   }
   
   .textbox {
-    color: white;
     width: 0px;
     padding: 0;
     margin: 0;
     border: none;
-    line-height: 30px;
-    font-size: 20px;
-    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    height:45px;
     background-color: transparent;
     outline: none;
     height: 100%;
-    float: left;
+    float: right;
   
     transition-duration: 0.05s;
   }

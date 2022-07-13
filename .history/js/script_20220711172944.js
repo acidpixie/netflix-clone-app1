@@ -15,7 +15,15 @@ let movies = new Vue({
     },
 
     trending: [{
-
+        name: 'All of Us are Dead',
+        description: 'A high school becomes ground zero for a zombie virus outbreak. Trapped students must fight their way out or turn into one of the rabid infected.',
+        image: 'images/all-of-us-are-dead.jpg',
+        comingSoon: 0,
+        actors: 'Ji-hu Park, Chan-Young Yoon, Yi-Hyun Cho',
+        director: 'Chun Sung-il, Lee Jae-kyoo, Kim Nam-su',
+        hover: false,
+    },
+    {
         name: 'Stranger Things S4',
         description: 'When a young boy disappears, his mother, a police chief and his friends must confront terrifying supernatural forces in order to get him back.',
         image: 'images/stranger-things.PNG',
@@ -32,6 +40,15 @@ let movies = new Vue({
         actors: 'Andy Samberg, Stephanie Beatriz, Terry Crews',
         director: 'Dan Goor, Michael Schur',
         hover: false,      
+    },
+    {
+        name: 'Cobra Kai',
+        description: 'Decades after their 1984 All Valley Karate Tournament bout, a middle-aged Daniel LaRusso and Johnny Lawrence find themselves martial-arts rivals again.',
+        image: 'images/cobra-kai.jpg',
+        comingSoon: 1,
+        actors: 'Ralph Macchio, William Zabka, Xolo Maridueña',
+        director: 'Josh Heald Jon, Hurwitz Hayden Schlossberg',
+        hover: false,
     },
     {
         name: 'Squid Game',
@@ -70,7 +87,16 @@ let movies = new Vue({
         hover: false,
     }],
 
-    dramaList: [
+    dramaList: [{
+
+        name: 'Jodhaa Akbar',
+        description: 'A sixteenth century love story about a marriage of alliance that gave birth to true love between a great Mughal emperor, Akbar, and a Rajput princess, Jodha.',
+        image: 'images/jodhaa-akbar.jpg',
+        comingSoon: 0,
+        actors: 'Hrithik Roshan, Aishwarya Rai Bachchan, Sonu Sood',
+        director: 'Ashutosh Gowariker',
+        hover: false,
+    },
     {
         name: 'Donnie Darko',
         description: 'After narrowly escaping a bizarre accident, a troubled teenager is plagued by visions of a man in a large rabbit suit who manipulates him to commit a series of crimes.',
@@ -108,6 +134,15 @@ let movies = new Vue({
         hover: false,
     },
     {
+        name: 'RamLeela',
+        description: 'Modern adaptation of William Shakespeares, Romeo and Juliet with an Indian twist, the film focuses on the story of Ram and Leela, their love, lust and the drama afterwards.',
+        image: 'images/ram-leela.jpg',
+        comingSoon: 0,
+        actors: 'Ranveer Singh, Deepika Padukone, Supriya Pathak',
+        director: 'Sanjay Leela Bhansali',
+        hover: false,
+    },
+    {
         name: 'Modern Family',
         description: 'Three different but related families face trials and tribulations in their own uniquely comedic ways.',
         image: 'images/modern-family.jpg',
@@ -133,6 +168,15 @@ let movies = new Vue({
         comingSoon: 1,
         actors: 'Steve Carell(voice), Pierre Coffin(voice), Alan Arkin(voice)',
         director: 'Kyle Balda, Brad Ableson, Jonathan del Val',
+        hover: false,
+    },
+    {
+        name: 'How to train your Dragon',
+        description: 'A helpless young Viking who aspires to hunt dragons becomes the unlikely friend of a young dragon himself, and learns there may be more to the creatures than he assumed.',
+        image: 'images/how-to-train-your-dragon.jpg',
+        comingSoon: 0,
+        actors: 'Jay Baruchel(voice), Gerard Butler(voice) Christopher, Mintz-Plasse(voice)',
+        director: 'Dean De Blois, Chris Sanders',
         hover: false,
     },
     {
@@ -169,6 +213,15 @@ let movies = new Vue({
         comingSoon: 0,
         actors: 'Mayumi Tanaka, Tony Beck, Laurent Vernin',
         director: 'Eiichiro Oda',
+        hover: false,
+    },
+    {
+        name: 'White Snake',
+        description: 'A love story between a snake spirit and a snake hunter.',
+        image: 'images/white-snake.PNG',
+        comingSoon: 0,
+        actors: 'Vincent Rodriguez III(English version), Matthew Moy(English version) ',
+        director: 'Amp Wong Ji Zhao',
         hover: false,
     },
     {
@@ -227,6 +280,24 @@ let movies = new Vue({
         hover: false,
     },
     {
+        name: 'Umberella Academy',
+        description: 'A family of former child heroes, now grown apart, must reunite to continue to protect the world.',
+        image: 'images/umbrella-academy.PNG',
+        comingSoon: 0,
+        actors: 'Elliot Page, Tom Hopper, David Castañeda',
+        director: 'Steve Blackman, Jeremy Slater',
+        hover: false,
+    },
+    {
+        name: 'Dirk Gently Holistic Detective Agency',
+        description: 'Holistic detective Dirk Gently investigates cases involving the supernatural.',
+        image: 'images/dirk-gentley.jpg',
+        comingSoon: 0,
+        actors: 'Samuel Barnett, Elijah Wood, Hannah Marks',
+        director: 'Max Landis',
+        hover: false,
+    },
+    {
         name: 'Pulp Fiction',
         description: 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',
         image: 'images/pulp-fiction.jpg',
@@ -255,12 +326,30 @@ let movies = new Vue({
         hover: false,
     },
     {
+        name: 'Princess Mononoke',
+        description: 'On a journey to find the cure for a Tatarigamis curse, Ashitaka finds himself in the middle of a war between the forest gods and Tatara, a mining colony, In this quest he also meets San, the Mononoke Hime.',
+        image: 'images/princess-mononoke.PNG',
+        comingSoon: 0,
+        actors: 'Yôji Matsuda(voice), Yuriko Ishida(voice), Yûko Tanaka(voice)',
+        director: 'Hayao Miyazaki',
+        hover: false,
+    },
+    {
         name: 'Lord of the Rings',
         description: 'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.',
         image: 'images/lord-of-the-ringd.jpg',
         comingSoon: 0,
         actors: 'Elijah Wood, Ian McKellen, Orlando Bloom',
         director: 'Peter Jackson',
+        hover: false,
+    },
+    {
+        name: 'Merlin',
+        description: 'These are the brand new adventures of Merlin, the legendary sorcerer as a young man, when he was just a servant to young Prince Arthur on the royal court of Camelot, who has soon become his best friend, and turned Arthur into a great king and a legend.',
+        image: 'images/merlin.jpg',
+        comingSoon: 0,
+        actors: 'John Hurt, Colin Morgan, Bradley James',
+        director: 'Johnny Capps, Julian Jones, Jake Michie',
         hover: false,
     },
     {
@@ -329,18 +418,6 @@ let movies = new Vue({
                 localStorage.removeItem(movieName);
             }
         },
-   },
-
-   computed: {
-
-        filterItem() {
-
-            let movieSearch = this.trending.concat(this.dramaList, this.actionList, this.fantasyList);
-            movieSearch = movieSearch.filter((item) => {
-                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.toLowerCase().includes(this.searchKey.toLowerCase())
-            });
-            return movieSearch;
-        }
    },
     
    mounted() {
