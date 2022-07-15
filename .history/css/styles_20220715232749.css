@@ -188,6 +188,15 @@ section {
 
 /*search button styling*/
 
-input {
+#searchbtn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     width: 500px;
+    height: 30px;
+    align-items: center;
+    background-color: #202020d5;
+    color: white;
+ 
 }
+

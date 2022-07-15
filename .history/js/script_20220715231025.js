@@ -402,7 +402,7 @@ let movies = new Vue({
 
 
 
-            let movieSearch = this.trending.concat(this.dramaList, this.actionList, this.fantasyList, this.comingSoonList);
+            let movieSearch = this.trending.concat(this.dramaList, this.actionList, this.fantasyList);
             movieSearch = movieSearch.filter((item) => {
                 return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.actors.toLowerCase().includes(this.searchKey.toLowerCase())
             });

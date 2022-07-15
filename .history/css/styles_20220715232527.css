@@ -41,7 +41,7 @@ a {
 video {
     margin-top: 60px;
     padding: 0;
-    width: 1510px;
+    width: 1560px;
     height: 720px;
 }
 
@@ -188,6 +188,16 @@ section {
 
 /*search button styling*/
 
-input {
+#searchbtn {
     width: 500px;
+    height: 30px;
+    align-items: center;
+    background-color: #202020d5;
+    color: white;
+}
+
+.search-box {
+    margin: 20px;
+
+
 }

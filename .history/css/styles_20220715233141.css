@@ -189,5 +189,6 @@ section {
 /*search button styling*/
 
 input {
+    display: flex;
     width: 500px;
 }

@@ -41,7 +41,7 @@ a {
 video {
     margin-top: 60px;
     padding: 0;
-    width: 1510px;
+    width: 1560px;
     height: 720px;
 }
 
@@ -90,14 +90,14 @@ video {
 
 ul {
     list-style: none;
-    margin-left: -50px;
+    margin-left: none;
 }
 
 .labels {
     width: 500px;
     font-family: poppins light;
     font-size: 25px;
-    padding-left: 20px;
+    padding-left: 40px;
 }
 
 img {
@@ -188,6 +188,16 @@ section {
 
 /*search button styling*/
 
-input {
+#searchbtn {
     width: 500px;
+    height: 30px;
+    align-items: center;
+    background-color: #202020d5;
+    color: white;
+}
+
+.search-box {
+    margin: 20px;
+
+
 }

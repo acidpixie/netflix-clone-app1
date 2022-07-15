@@ -189,5 +189,6 @@ section {
 /*search button styling*/
 
 input {
+    align-items: center;
     width: 500px;
 }
