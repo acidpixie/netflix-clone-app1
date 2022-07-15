@@ -350,7 +350,7 @@ let movies = new Vue({
     ],
 
     watchList: [],
-    searchKey: "",
+    searchKey: ""
    },
 
    methods: {
@@ -398,13 +398,12 @@ let movies = new Vue({
 
    computed: {
 
-        filterMovies() {
+        filterItem() {
 
             let movieSearch = this.trending.concat(this.dramaList, this.actionList, this.fantasyList);
             movieSearch = movieSearch.filter((item) => {
-                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.actors.toLowerCase().includes(this.searchKey.toLowerCase())
+                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.toLowerCase().includes(this.searchKey.toLowerCase())
             });
-
             return movieSearch;
         }
    },

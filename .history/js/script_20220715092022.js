@@ -287,17 +287,19 @@ let movies = new Vue({
         name: 'All of Us are Dead',
         description: 'A high school becomes ground zero for a zombie virus outbreak. Trapped students must fight their way out or turn into one of the rabid infected.',
         image: 'images/all-of-us-are-dead.jpg',
-        comingSoon: 0,
+        comingSoon: 1,
         actors: 'Ji-hu Park, Chan-Young Yoon, Yi-Hyun Cho',
         director: 'Chun Sung-il, Lee Jae-kyoo, Kim Nam-su',
         hover: false,
-    }],
+    }]
+    ,
+
     comingSoonList: [
         {
             name: 'Avatar 2',
             description: 'Jake Sully lives with his newfound family formed on the planet of Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Navi race to protect their planet.',
             image: 'images/avatar2.jpg',
-            comingSoon: 1,
+            comingSoon: 0,
             actors: 'Michelle Yeoh, Kate Winslet, Zoe Saldana',
             director: 'James Cameron',
             hover: false,
@@ -347,10 +349,11 @@ let movies = new Vue({
             director: 'Ryan J Condal, George RR Martin',
             hover: false,
         },
+
     ],
 
     watchList: [],
-    searchKey: "",
+    searchKey: ""
    },
 
    methods: {
@@ -361,9 +364,9 @@ let movies = new Vue({
                 alert("This title is already on your list");
             }
 
-         /*   else if (this.watchList.some(c => c.comingSoon === movieComingSoon)) {
-                alert("This title has not been released as yet"); 
-            }*/
+            else if (this.watchList.some(c => c.comingSoon === movieComingSoon)) {
+                alert("This title has not been released as yet");
+            }
 
             else {
                 //create the movie object
@@ -392,19 +395,16 @@ let movies = new Vue({
                 localStorage.removeItem(movieName);
             }
         },
-
-
    },
 
    computed: {
 
-        filterMovies() {
+        filterItem() {
 
             let movieSearch = this.trending.concat(this.dramaList, this.actionList, this.fantasyList);
             movieSearch = movieSearch.filter((item) => {
-                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.actors.toLowerCase().includes(this.searchKey.toLowerCase())
+                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.toLowerCase().includes(this.searchKey.toLowerCase())
             });
-
             return movieSearch;
         }
    },

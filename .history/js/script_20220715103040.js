@@ -291,7 +291,9 @@ let movies = new Vue({
         actors: 'Ji-hu Park, Chan-Young Yoon, Yi-Hyun Cho',
         director: 'Chun Sung-il, Lee Jae-kyoo, Kim Nam-su',
         hover: false,
-    }],
+    }]
+    ,
+
     comingSoonList: [
         {
             name: 'Avatar 2',
@@ -347,10 +349,11 @@ let movies = new Vue({
             director: 'Ryan J Condal, George RR Martin',
             hover: false,
         },
+
     ],
 
     watchList: [],
-    searchKey: "",
+    searchKey: ""
    },
 
    methods: {
@@ -392,19 +395,16 @@ let movies = new Vue({
                 localStorage.removeItem(movieName);
             }
         },
-
-
    },
 
    computed: {
 
-        filterMovies() {
+        filterItem() {
 
             let movieSearch = this.trending.concat(this.dramaList, this.actionList, this.fantasyList);
             movieSearch = movieSearch.filter((item) => {
-                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.actors.toLowerCase().includes(this.searchKey.toLowerCase())
+                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.toLowerCase().includes(this.searchKey.toLowerCase())
             });
-
             return movieSearch;
         }
    },

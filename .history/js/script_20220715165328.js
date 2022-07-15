@@ -346,11 +346,13 @@ let movies = new Vue({
             actors: 'Paddy Considine, Olivia Cooke, Emma DArcy',
             director: 'Ryan J Condal, George RR Martin',
             hover: false,
-        },
-    ],
+        }],
 
     watchList: [],
-    searchKey: "",
+
+    searchInput: {
+        searchText: "",
+    },
    },
 
    methods: {
@@ -398,13 +400,12 @@ let movies = new Vue({
 
    computed: {
 
-        filterMovies() {
+        filterItem() {
 
-            let movieSearch = this.trending.concat(this.dramaList, this.actionList, this.fantasyList);
-            movieSearch = movieSearch.filter((item) => {
-                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.actors.toLowerCase().includes(this.searchKey.toLowerCase())
-            });
+            let movieSearch = this.movies.filter((movies) => {
+                return item.name.toLowerCase().includes(this.searchInput.searchText.toLowerCase());
 
+            })
             return movieSearch;
         }
    },

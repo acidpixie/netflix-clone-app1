@@ -189,8 +189,8 @@ section {
 
 #searchbtn {
     width: 200px;
-    height: 30px;
+    height: 10px;
     align-items: center;
-    background-color: #202020d5;
+    background-color: red;
     color: white;
 }

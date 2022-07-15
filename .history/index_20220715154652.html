@@ -41,7 +41,10 @@
     </nav>
 
     <nav class="second-nav">
-      <a href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+      <div class="search-bar">
+      <a class = "search-btn" href="#"><i class="fa fa-search" aria-hidden="true"></i></a>
+      <input type="search" class="textbox" v-model="movieSearch" placeholder="type here..."/>
+      </div>
       <a href="#"><i class="fa fa-bell" aria-hidden="true"></i></a>
       <a href="#">Profile</a>
     </nav>
@@ -59,11 +62,6 @@
       <button id="display-button" :disabled="watchList.length===20" @click="saveItem(vid.name, vid.description, vid.image)">Add to watch-list</button>
     </div>
 
-    <div>
-    <input type="search" id="search" v-model="searchKey" placeholder="Search by Name, Actor or Director">
-    <input id="searchButton" type="button" value="search"/>
-    </div>
-
     <!--COMING SOON-->
     <h2 class="labels">Coming Soon</h2>
     <ul class="list-items">
@@ -72,15 +70,15 @@
         <div>
           <img v-bind:src="movies.image" class="thumbnail">
         </div>
-        <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+        <p v-if="movies.comingSoon==0" class="tag">Coming Soon!</p>
         <div class="info" v-if="movies.hover">
           <!--visible on hover only-->
           <p> {{movies.name}} </p>
           <p> {{movies.description}} </p>
           <p> Starring: {{movies.actors}} </p>
-      <!--   <button :disabled="watchList.length===20"
+        <button :disabled="watchList.length===20"
             @click="saveItem(movies.name, movies.description, movies.image, movies.comingSoon, movies.actors, movies.director)"
-            class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button> --> 
+            class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button>
         </div>
       </li>
     </ul>
@@ -94,7 +92,7 @@
         <div>
           <img v-bind:src="movies.image" class="thumbnail">
         </div>
-        <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+        <p v-if="movies.comingSoon==0" class="tag">Coming Soon!</p>
         <div class="info" v-if="movies.hover">
           <!--visible on hover only-->
           <p> {{movies.name}} </p>
@@ -115,7 +113,7 @@
         <div>
           <img v-bind:src="movies.image" class="thumbnail">
         </div>
-        <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+        <p v-if="movies.comingSoon==0" class="tag">Coming Soon!</p>
         <div class="info" v-if="movies.hover">
           <!--visible on hover only-->
           <p> {{movies.name}} </p>
@@ -136,7 +134,7 @@
         <div>
           <img v-bind:src="movies.image" class="thumbnail">
         </div>
-        <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+        <p v-if="movies.comingSoon==0" class="tag">Coming Soon!</p>
         <div class="info" v-if="movies.hover">
           <!--visible on hover only-->
           <p> {{movies.name}} </p>
@@ -157,7 +155,7 @@
         <div>
           <img v-bind:src="movies.image" class="thumbnail">
         </div>
-        <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+        <p v-if="movies.comingSoon==0" class="tag">Coming Soon!</p>
         <div class="info" v-if="movies.hover">
           <!--visible on hover only-->
           <p> {{movies.name}} </p>
@@ -178,7 +176,7 @@
         <div>
           <img v-bind:src="movies.image" class="thumbnail">
         </div>
-        <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+        <p v-if="movies.comingSoon==0" class="tag">Coming Soon!</p>
         <div class="info" v-if="movies.hover">
           <!--visible on hover only-->
           <p> {{movies.name}} </p>
@@ -200,7 +198,7 @@
           <div>
             <img v-bind:src="movies.image" class="thumbnail">
           </div>
-          <p v-if="movies.comingSoon==1" class="tag">Coming Soon!</p>
+          <p v-if="movies.comingSoon==0" class="tag">Coming Soon!</p>
           <div class="list-item-remove">
           <button @click="removeItem(movies.name)" id="remove-button"><i class="fa fa-minus"
               aria-hidden="true"></i></button>

@@ -116,7 +116,7 @@ li {
     margin-top: 150px;
     width: 250px;
     height: 25px;
-    background-color: #121212af;
+    background-color: #24232399;
     text-align: center;
     position: absolute;
 
@@ -125,7 +125,7 @@ li {
 .info {
   /*  visibility: hidden; */
   border-radius: 12px;
-  background-color: #1f1f1fd1;
+  background-color: #2423237d;
   color: white;
   font-family: poppins;
   font-size: 11px;
@@ -187,10 +187,66 @@ section {
 
 /*search button styling*/
 
-#searchbtn {
-    width: 200px;
-    height: 30px;
+.search-bar {
+    margin:0;
+    padding:0;
+    height: 50px;
+    display: flex;
     align-items: center;
-    background-color: #202020d5;
+    justify-content: center;
+    top:55%;
+    left:75%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    transition-duration: 0.2s;
+  }
+  
+  .textbox {
     color: white;
-}
+    width: 0px;
+    padding: 0;
+    margin: 0;
+    border: none;
+    line-height: 30px;
+    font-size: 20px;
+    height: 40px;
+    background-color: transparent;
+    outline: none;
+    height: 100%;
+    float: left;
+  
+    transition-duration: 0.05s;
+  }
+  
+  .search-btn {
+    background-color: transparent;
+    padding: 0px 0px 0px 0px;
+    margin: 0;
+    height: 30px;
+    width: 30px;
+    text-decoration: none;
+    /* border-left: 5px black solid; */
+    height: 100%;
+    transition-duration: 0.2s;
+  }
+  
+  
+  .search-bar:hover > .textbox {
+    padding: 0px 10px 0px 10px;
+    width: 100%;
+    transition-duration: 0.2s;
+  }
+  
+  .search-bar:hover > .search-btn {
+    border-left: 5px black solid;
+    transition-duration: 0.2s;
+  }
+  
+  .search-btn:hover {
+    background-color: black;
+    transition-duration: 0.2s;
+  }
+  .search-btn:hover > p {
+    color: white;
+    transition-duration: 0.2s;
+  }

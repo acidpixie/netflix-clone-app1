@@ -242,7 +242,7 @@ let movies = new Vue({
         name: 'Lord of the Rings',
         description: 'A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.',
         image: 'images/lord-of-the-ringd.jpg',
-        comingSoon: 0,
+        comingSoon: 1,
         actors: 'Elijah Wood, Ian McKellen, Orlando Bloom',
         director: 'Peter Jackson',
         hover: false,
@@ -297,7 +297,7 @@ let movies = new Vue({
             name: 'Avatar 2',
             description: 'Jake Sully lives with his newfound family formed on the planet of Pandora. Once a familiar threat returns to finish what was previously started, Jake must work with Neytiri and the army of the Navi race to protect their planet.',
             image: 'images/avatar2.jpg',
-            comingSoon: 1,
+            comingSoon: 0,
             actors: 'Michelle Yeoh, Kate Winslet, Zoe Saldana',
             director: 'James Cameron',
             hover: false,
@@ -306,7 +306,7 @@ let movies = new Vue({
             name: 'Jurassic World Dominion',
             description: 'Four years after dinosaurs have been set loose on the mainland, humans have had to adjust to their presence.',
             image: 'images/jurassic-world-dominion.jpg',
-            comingSoon: 1,
+            comingSoon: 0,
             actors: 'Chris Pratt, Bryce Dallas Howard, Laura Dern',
             director: 'Colin Trevorrow',
             hover: false,
@@ -315,7 +315,7 @@ let movies = new Vue({
             name: 'Thor Love and Thunder',
             description: 'Thor enlists the help of Valkyrie, Korg and ex-girlfriend Jane Foster to fight Gorr the God Butcher, who intends to make the gods extinct.',
             image: 'images/thor-love-and-thunder.jpg',
-            comingSoon: 1,
+            comingSoon: 0,
             actors: 'Chris Hemsworth, Natalie Portman, Christian Bale',
             director: 'Taika Waititi',
             hover: false,
@@ -324,7 +324,7 @@ let movies = new Vue({
             name: 'My Name 2',
             description: 'The story about a woman who joins an organized crime ring and infiltrates the police as an undercover agent in order to find out the truth about her fathers death.',
             image: 'images/my-name.jpg',
-            comingSoon: 1,
+            comingSoon: 0,
             actors: 'Hee-soon Park, Ahn Bo-Hyun, Han So-hee',
             director: 'Kim Jin-min',
             hover: false,
@@ -333,7 +333,7 @@ let movies = new Vue({
             name: 'Minions Rise of Gru',
             description: 'The untold story of one twelve-year-olds dream to become the worlds greatest supervillain.',
             image: 'images/minions.jpg',
-            comingSoon: 1,
+            comingSoon: 0,
             actors: 'Steve Carell(voice), Pierre Coffin(voice), Alan Arkin(voice)',
             director: 'Kyle Balda, Brad Ableson, Jonathan del Val',
             hover: false,
@@ -342,15 +342,14 @@ let movies = new Vue({
             name: 'House of the Dragon',
             description: 'The story of the House Targaryen set 200 years before the events of Game of Thrones (2011).',
             image: 'images/house-of-the-dragon.jpg',
-            comingSoon: 1,
+            comingSoon: 0,
             actors: 'Paddy Considine, Olivia Cooke, Emma DArcy',
             director: 'Ryan J Condal, George RR Martin',
             hover: false,
-        },
-    ],
+        }],
 
     watchList: [],
-    searchKey: "",
+    searchKey: ""
    },
 
    methods: {
@@ -361,9 +360,9 @@ let movies = new Vue({
                 alert("This title is already on your list");
             }
 
-         /*   else if (this.watchList.some(c => c.comingSoon === movieComingSoon)) {
+          else if (this.watchList.some(c => c.comingSoon === movieComingSoon)) {
                 alert("This title has not been released as yet"); 
-            }*/
+            }
 
             else {
                 //create the movie object
@@ -398,13 +397,12 @@ let movies = new Vue({
 
    computed: {
 
-        filterMovies() {
+        filterItem() {
 
             let movieSearch = this.trending.concat(this.dramaList, this.actionList, this.fantasyList);
             movieSearch = movieSearch.filter((item) => {
-                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.actors.toLowerCase().includes(this.searchKey.toLowerCase())
+                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.toLowerCase().includes(this.searchKey.toLowerCase())
             });
-
             return movieSearch;
         }
    },

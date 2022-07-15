@@ -34,15 +34,6 @@ let movies = new Vue({
         hover: false,      
     },
     {
-        name: 'Umberella Academy',
-        description: 'A family of former child heroes, now grown apart, must reunite to continue to protect the world.',
-        image: 'images/umbrella-academy.jpg',
-        comingSoon: 0,
-        actors: 'Elliot Page, Tom Hopper, David Castañeda',
-        director: 'Steve Blackman, Jeremy Slater',
-        hover: false,
-    },
-    {
         name: 'Squid Game',
         description: 'Hundreds of cash-strapped players accept a strange invitation to compete in childrens games. Inside, a tempting prize awaits with deadly high stakes, A survival game that has a whopping 456 billion won prize at stake.',
         image: 'images/squid-game.jpg',
@@ -87,15 +78,6 @@ let movies = new Vue({
         comingSoon: 0,
         actors: 'Ranveer Singh, Deepika Padukone, Priyanka Chopra Jonas',
         director: 'Sanjay Leela Bhansali',
-        hover: false,
-    },
-    {
-        name: 'DearM',
-        description: 'A search takes place for "M" who wrote something on the community board of Seoyeon Universitys website.The writing turned the university upside down.',
-        image: 'images/dear-m.jpg',
-        comingSoon: 0,
-        actors: 'Hye-soo Park, (NCT) Jaehyun, No Jeong-ee',
-        director: 'Park Jin-woo, Seo Joo-wan',
         hover: false,
     },
     {
@@ -171,15 +153,6 @@ let movies = new Vue({
         actors: 'Justin Roiland, Chris Parnell, Spencer Grammer',
         director: 'Dan Harmon, Justin Roiland',
         hover: false,
-    },
-    {
-        name: 'White Snake',
-        description: 'A love story between a snake spirit and a snake hunter.',
-        image: 'images/white-snake.jpg',
-        comingSoon: 0,
-        actors: 'Vincent Rodriguez III(English version), Matthew Moy(English version) ',
-        director: 'Amp Wong Ji Zhao',
-        hover: false,
     }],
 
     actionList: [{
@@ -219,15 +192,6 @@ let movies = new Vue({
         hover: false,
     },
     {
-        name: 'Cobra Kai',
-        description: 'Decades after their 1984 All Valley Karate Tournament bout, a middle-aged Daniel LaRusso and Johnny Lawrence find themselves martial-arts rivals again.',
-        image: 'images/cobra-kai.jpg',
-        comingSoon: 0,
-        actors: 'Ralph Macchio, William Zabka, Xolo Maridueña',
-        director: 'Josh Heald Jon, Hurwitz Hayden Schlossberg',
-        hover: false,
-    },
-    {
         name: 'Pulp Fiction',
         description: 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.',
         image: 'images/pulp-fiction.jpg',
@@ -248,30 +212,12 @@ let movies = new Vue({
         hover: false,
     },
     {
-        name: 'Merlin',
-        description: 'These are the brand new adventures of Merlin, the legendary sorcerer as a young man, when he was just a servant to young Prince Arthur on the royal court of Camelot, who has soon become his best friend, and turned Arthur into a great king and a legend.',
-        image: 'images/merlin.jpg',
-        comingSoon: 0,
-        actors: 'John Hurt, Colin Morgan, Bradley James',
-        director: 'Johnny Capps, Julian Jones, Jake Michie',
-        hover: false,
-    },
-    {
         name: 'Sucker Punch',
         description: 'A young girl institutionalized by her abusive stepfather retreats to an alternative reality as a coping strategy and envisions a plan to help her escape.',
         image: 'images/sucker-punch.jpg',
         comingSoon: 0,
         actors: 'Emily Browning, Vanessa Hudgens, Abbie Cornish',
         director: 'Zack Snyder',
-        hover: false,
-    },
-    {
-        name: 'Dirk Gently Holistic Detective Agency',
-        description: 'Holistic detective Dirk Gently investigates cases involving the supernatural.',
-        image: 'images/dirk-gentley.jpg',
-        comingSoon: 0,
-        actors: 'Samuel Barnett, Elijah Wood, Hannah Marks',
-        director: 'Max Landis',
         hover: false,
     },
     {
@@ -282,16 +228,9 @@ let movies = new Vue({
         actors: 'Nicole Fong(voice), Victoria Grace(voice), Jason Ko(English version)',
         director: 'Ji Zhao',
         hover: false,
-    },
-    {
-        name: 'All of Us are Dead',
-        description: 'A high school becomes ground zero for a zombie virus outbreak. Trapped students must fight their way out or turn into one of the rabid infected.',
-        image: 'images/all-of-us-are-dead.jpg',
-        comingSoon: 0,
-        actors: 'Ji-hu Park, Chan-Young Yoon, Yi-Hyun Cho',
-        director: 'Chun Sung-il, Lee Jae-kyoo, Kim Nam-su',
-        hover: false,
-    }],
+    }]
+    ,
+
     comingSoonList: [
         {
             name: 'Avatar 2',
@@ -347,10 +286,19 @@ let movies = new Vue({
             director: 'Ryan J Condal, George RR Martin',
             hover: false,
         },
+        {
+            name: 'DearM',
+            description: 'A search takes place for "M" who wrote something on the community board of Seoyeon Universitys website.The writing turned the university upside down.',
+            image: 'images/dear-m.jpg',
+            comingSoon: 1,
+            actors: 'Hye-soo Park, (NCT) Jaehyun, No Jeong-ee',
+            director: 'Park Jin-woo, Seo Joo-wan',
+            hover: false,
+        },
     ],
 
     watchList: [],
-    searchKey: "",
+    searchKey: ""
    },
 
    methods: {
@@ -360,11 +308,6 @@ let movies = new Vue({
             if (this.watchList.some(m => m.name === movieName)) {
                 alert("This title is already on your list");
             }
-
-         /*   else if (this.watchList.some(c => c.comingSoon === movieComingSoon)) {
-                alert("This title has not been released as yet"); 
-            }*/
-
             else {
                 //create the movie object
                 let movieObj = {
@@ -392,19 +335,16 @@ let movies = new Vue({
                 localStorage.removeItem(movieName);
             }
         },
-
-
    },
 
    computed: {
 
-        filterMovies() {
+        filterItem() {
 
             let movieSearch = this.trending.concat(this.dramaList, this.actionList, this.fantasyList);
             movieSearch = movieSearch.filter((item) => {
-                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.actors.toLowerCase().includes(this.searchKey.toLowerCase())
+                return item.name.toLowerCase().includes(this.searchKey.toLowerCase()) || item.director.toLowerCase().includes(this.searchKey.toLowerCase()) || item.toLowerCase().includes(this.searchKey.toLowerCase())
             });
-
             return movieSearch;
         }
    },
