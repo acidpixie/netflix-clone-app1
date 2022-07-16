@@ -394,6 +394,12 @@ let movies = new Vue({
             }
         },
 
+        check: function (movieComingSoon) {
+
+            const upcomingMovies = this.movies.map(function (x) {return x.movieComingSoon => movieComingSoon === 1};
+
+        }
+
    },
 
    computed: {
@@ -407,16 +413,7 @@ let movies = new Vue({
             });
 
             return movieSearch; 
-        },
-
-     /*   Upcoming() {
-
-            let upcomingMovies = this.treaning.concat(this.dramaList, this.actionList, this.fantasyList, this.comingSoonList);
-            upcomingMovies = upcomingMovies.filter((item) => movieComingSoon === 1)
-                return upcomingMovies;
-            },*/
-
-          
+        }
    },
     
    mounted() {

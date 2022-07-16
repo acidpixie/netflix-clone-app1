@@ -409,14 +409,13 @@ let movies = new Vue({
             return movieSearch; 
         },
 
-     /*   Upcoming() {
+        Upcoming() {
 
-            let upcomingMovies = this.treaning.concat(this.dramaList, this.actionList, this.fantasyList, this.comingSoonList);
-            upcomingMovies = upcomingMovies.filter((item) => movieComingSoon === 1)
+            let upcomingMovies = this.movies.filter(movieComingSoon === 1)
                 return upcomingMovies;
-            },*/
+            },
 
-          
+        }
    },
     
    mounted() {

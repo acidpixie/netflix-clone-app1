@@ -50,7 +50,7 @@
 
   <!--VIDEO CAROUSEL WITH TEXT-->
   <div id="display-video">
-    <video autoplay controls muted loop>
+    <video controls muted loop> <!--Add in autoplay once done-->
       <source src="/video/Jujutsu-Kaisen.mp4" id="video-header">
     </video>
     <div id="display-content">
@@ -67,9 +67,9 @@
     <!--FILTERED / SEARCHED MOVIES-->
 
     <div>
-     <ul class="list-items" v-show="toggle" id="filtered-item-list">
+     <ul class="list-items" v-show="toggle">
         <li class="content-items" v-for="(movies, index) in filterMovies" :key="index" @mouseover="movies.hover = true"
-        @mouseleave="movies.hover = false">
+        @mouseleave="movies.hover = false" id="filtered-item-list">
         <div>
           <img v-bind:src="movies.image" class="thumbnail">
         </div>

@@ -24,9 +24,6 @@ header {
     grid-template-columns: 1fr 4fr 1fr;
     width: 100%;
     margin-bottom: 0px;
-    top: -1px;
-    left: -1px;
-    background-color: black;
 }
 
 nav {
@@ -196,7 +193,8 @@ input {
 }
 
 #filtered-item-list {
-    width: 1510px;
+    width: 1500px;
     overflow-y: hidden;
+    
 }
 

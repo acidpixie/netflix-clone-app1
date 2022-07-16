@@ -59,15 +59,14 @@
       <button id="display-button" :disabled="watchList.length===20" @click="saveItem(vid.name, vid.description, vid.image)">Add to watch-list</button>
     </div>
 
-    <div class="search-box">
+    <div class="search-box" v-show="toggle">
     <input type="search" id="search" class="searchbox" v-model="searchKey" placeholder="Search by Name, Actor or Director">
     </div>
 
 
     <!--FILTERED / SEARCHED MOVIES-->
-
-    <div>
-     <ul class="list-items" v-show="toggle" id="filtered-item-list">
+ 
+    <ul class="list-items" v-show="!toggle">
         <li class="content-items" v-for="(movies, index) in filterMovies" :key="index" @mouseover="movies.hover = true"
         @mouseleave="movies.hover = false">
         <div>
@@ -79,13 +78,13 @@
           <p> {{movies.name}} </p>
           <p> {{movies.description}} </p>
           <p> Starring: {{movies.actors}} </p>
-          <button :disabled="movies.comingSoon===1 || watchList===20"
+          <button :disabled="watchList.length===20"
             @click="saveItem(movies.name, movies.description, movies.image, movies.comingSoon, movies.actors, movies.director)"
             class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button>
         </div>
-        </li>
-     </ul>
-    </div>
+      </li>
+    </ul>
+
 
     <!--COMING SOON-->
     <h2 class="labels">Coming Soon</h2>
@@ -101,9 +100,9 @@
           <p> {{movies.name}} </p>
           <p> {{movies.description}} </p>
           <p> Starring: {{movies.actors}} </p>
-        <button :disabled="movies.comingSoon===1"
+      <!--   <button :disabled="watchList.length===20"
             @click="saveItem(movies.name, movies.description, movies.image, movies.comingSoon, movies.actors, movies.director)"
-            class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            class="info-add-button"><i class="fa fa-plus" aria-hidden="true"></i></button> --> 
         </div>
       </li>
     </ul>
